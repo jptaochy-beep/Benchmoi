@@ -15,6 +15,14 @@ npm run dev                  # http://localhost:3000
 
 Node 20+ requis. Les données (projets, campagnes, recherches) sont stockées dans `data/db.json` (non versionné).
 
+## Tester en ligne (Vercel, possible depuis un iPhone)
+
+1. vercel.com → se connecter avec GitHub → **Add New… → Project** → importer `benchmoi`.
+2. **Environment Variables** : `ANTHROPIC_API_KEY` = votre clé.
+3. **Deploy**, puis ouvrir l'URL `https://….vercel.app`.
+
+Sur Vercel, les données sont stockées dans `/tmp` : elles peuvent disparaître entre deux sessions. Suffisant pour tester ; base PostgreSQL nécessaire pour un usage d'équipe.
+
 ## Les 6 écrans
 
 | Écran | URL | Rôle |

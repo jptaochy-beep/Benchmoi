@@ -7,7 +7,9 @@ import type { DB } from "./types";
  * Stockage du prototype : un fichier JSON local (data/db.json).
  * Cible production : PostgreSQL + pgvector (cf. cahier des charges § 7.1).
  */
-const DB_PATH = path.join(process.cwd(), "data", "db.json");
+const DATA_DIR =
+  process.env.CI_DATA_DIR || (process.env.VERCEL ? "/tmp/ci-data" : path.join(process.cwd(), "data"));
+const DB_PATH = path.join(DATA_DIR, "db.json");
 
 const empty = (): DB => ({ campaigns: {}, analyses: {}, searches: {}, projects: {} });
 
